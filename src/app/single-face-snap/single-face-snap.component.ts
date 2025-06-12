@@ -1,18 +1,20 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FaceSnap } from "../models/face-snap";
 import { NgStyle, NgClass, UpperCasePipe, DatePipe } from "@angular/common";
 import { FaceSnapsService } from "../Services/face-snaps-service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-	selector: "app-face-snap",
+	selector: "app-single-face-snap",
 	imports: [NgStyle, NgClass, UpperCasePipe, DatePipe],
-	templateUrl: "./face-snap.component.html",
-	styleUrl: "./face-snap.component.scss",
+	templateUrl: "./single-face-snap.component.html",
+	styleUrl: "./single-face-snap.component.scss",
 })
-export class FaceSnapComponent implements OnInit {
-	@Input() facesnap!: FaceSnap;
-
-	constructor(private faceSnapsService: FaceSnapsService) {}
+export class SingleFaceSnapComponent implements OnInit {
+	constructor(
+		private faceSnapsService: FaceSnapsService,
+		private route: ActivatedRoute,
+	) {}
 
 	snapped!: boolean;
 	snapButtonText!: string;
