@@ -16,7 +16,6 @@ export class SingleFaceSnapComponent implements OnInit {
 	constructor(
 		private faceSnapsService: FaceSnapsService,
 		private route: ActivatedRoute,
-		// public faceSnap: FaceSnap
 	) {}
 
 	snapped!: boolean;
